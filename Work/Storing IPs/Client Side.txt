@@ -1,0 +1,8 @@
+# import socket
+# client_object = socket.socket()
+# # This is another example of declaring a socket here by default
+# # AF_INET and SOCK_STREAM gets selected.
+# client_object.connect(('localhost', 9999))
+# print(client_object.recv(1024).decode())
+# client_object.close()
+# # Closing Client

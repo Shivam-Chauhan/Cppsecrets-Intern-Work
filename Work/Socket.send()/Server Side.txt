@@ -1,0 +1,38 @@
+# import socket
+#
+# socket_object = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# # Socket Object is created using AF_INET and TCP protocol.
+# # print("Socket created")
+# socket_object.bind(('localhost', 8000))
+# # Since the socket is server and client is on same machine
+# # we can use 'localhost'.
+# # 8000 is the port number used for binding.
+# socket_object.listen(3)
+# # This listens to only three clients.
+# storing_table = dict()
+# while True:
+#     client_object, address_client = socket_object.accept()
+#     client_object.send(bytes("Do you want to retrive data?!?", "utf-8"))
+#     client_object.send(bytes(" Enter YES/NO", "utf-8"))
+#     yes_no = client_object.recv(10).decode()
+#     if "Y" in yes_no or 'y' in yes_no:
+#         # client_object.send(bytes("Enter phone number", "utf-8"))
+#         phone_number = client_object.recv(10).decode()
+#         if phone_number in storing_table.keys():
+#             client_object.send(bytes(storing_table[phone_number], "utf-8"))
+#         else:
+#             client_object.send(bytes("Not found!!", "utf-8"))
+#     elif 'n' in yes_no or 'N' in yes_no:
+#         # Accepting the connections
+#         # client_object.send(bytes("You are connected to Server!!!", 'utf-8'))
+#         phone_number = client_object.recv(1024).decode()
+#         name_client = client_object.recv(1024).decode()
+#         storing_table[phone_number] = name_client
+#         # Filtering the input for summation
+#         message = "Information has been stored"
+#         client_object.send(bytes(message, "utf-8"))
+#         if len(storing_table) == 3:
+#             break
+#     else:
+#         client_object.send(bytes("Invalid input", "utf-8"))
+#     client_object.close()

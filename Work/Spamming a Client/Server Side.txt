@@ -1,0 +1,31 @@
+# import socket
+#
+#
+# def random_text():
+#     Random_list = list(map(str, lorem.sentence().split(" ")))
+#     # Filtering out the random word from lorem text
+#     x = random.randint(0, len(Random_list))
+#     return Random_list[x-1]
+#     # Returning random text
+#
+#
+# socket_object = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# # Socket Object is created using AF_INET and TCP protocol.
+# socket_object.bind(('localhost', 9999))
+# # Since the socket is server and client is on same machine
+# # we can use 'localhost'.
+# # 9999 is the port number used for binding.
+# socket_object.listen(1)
+# # This listens to only three clients.
+# frequency_of_sending = int(input("Number of messages to send :-"))
+# frequency = float(input("Time interval to Halt messages :-"))
+# client_object, address_client = socket_object.accept()
+# # Accepting the client connection
+# client_object.send(bytes(str(frequency_of_sending), "utf-8"))
+# for j in range(frequency_of_sending):
+#     # Accepting the connections
+#     client_object.send(bytes(random_text(), "utf-8"))
+#     # time.sleep(frequency)
+#     # Sending back the result
+# # cd desktop/cppsecrets_python_pro
+# print("Task Done!!!")

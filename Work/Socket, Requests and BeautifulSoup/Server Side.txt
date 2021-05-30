@@ -1,0 +1,39 @@
+# import socket
+# from bs4 import BeautifulSoup
+# from urllib.request import Request, urlopen
+#
+# socket_object = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# # Socket Object is created using AF_INET and TCP.
+# print("socket created")
+# socket_object.bind(('localhost', 9999))
+# # Since the socket is server and client is on same machine
+# # we can use 'localhost'.
+# # 9999 is the port number used for binding.
+# socket_object.listen(100)
+# # This listens to only three clients.
+#
+# while True:
+#     client_object, address_client = socket_object.accept()
+#     client_object.send(bytes("You are connected to Server", 'utf-8'))
+#     client_object.send(bytes("Enter unique Id of Cppsecrets :-", 'utf-8'))
+#     unique_id = client_object.recv(1024).decode()
+#     req = Request("https://cppsecrets.com/user/index.php?id=articles&uid="
+#                   + str(unique_id))
+#     # This is a link for an author
+#     html_page = urlopen(req)
+#     soup = BeautifulSoup(html_page, "lxml")
+#     linker = []
+#     ct = 0
+#     for link in soup.findAll('a'):
+#         try:
+#             actual_link = link.get('href')
+#             if str(unique_id) in actual_link:
+#                 ct += 1
+#                 linker.append(actual_link)
+#         except TypeError:
+#             continue
+#
+#     out = ' '.join(map(str, linker))
+#     client_object.send(out.encode())
+#
+#     client_object.close()

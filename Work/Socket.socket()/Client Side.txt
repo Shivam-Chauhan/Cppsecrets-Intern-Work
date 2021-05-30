@@ -1,0 +1,12 @@
+# import socket
+#
+# client_object = socket.socket()
+# # This is another example of declaring a socket here by default
+# # AF_INET and SOCK_STREAM gets selected.
+# client_object.connect(('localhost', 9999))
+#
+# # Same as that for a Server.
+# # print(client_object.recv(1024))
+# # This recieves 1024 bytes of packets.
+#
+# print(client_object.recv(1024).decode())

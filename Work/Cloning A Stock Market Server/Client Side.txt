@@ -1,0 +1,16 @@
+# import socket
+#
+# client_object = socket.socket()
+# # This is another example of declaring a socket here by default
+# # AF_INET and SOCK_STREAM gets selected.
+# client_object.connect(('localhost', 9999))
+# # Same as that for a Server.
+# # The packet are generally utf-8 coded hence to decode use decode() method.
+# stri = input("Enter the name of the company!!")
+# client_object.send(bytes(stri, 'utf-8'))
+# yes_no = client_object.recv(1024).decode()
+# if yes_no == "Yes":
+#     print(client_object.recv(1024).decode())
+#
+# client_object.close()
+# # Closing Client

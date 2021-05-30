@@ -1,0 +1,20 @@
+# import socket
+# number_of_clients = 3
+# host_name = 'localhost'  # Server is on our local machine
+# port_number = 9999  # Port number, choose it wisely as many ports are being
+# #  occupied
+# address = (host_name, port_number)  # Tuple of server address
+# # We are creating a TCP server
+# # For checking if a system support dualstack operation this can be done by
+# # Checking if it has dual stack functionality
+# print(socket.has_dualstack_ipv6())
+# socket_object = socket.create_server(address, family=socket.AF_INET6,
+#                                      dualstack_ipv6=True, backlog=False)
+# # This is use to listen n number of clients
+# socket_object.listen(number_of_clients)
+# while True:
+#     # Returning a client object and it's address
+#     client_object, client_address = socket_object.accept()
+#     client_object.send(bytes("You are now connected", 'utf-8'))
+#     client_object.close()  # Closing a connection to connected client
+

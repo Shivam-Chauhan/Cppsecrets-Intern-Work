@@ -1,0 +1,19 @@
+# import socket
+#
+# client_object = socket.socket()
+# # This is another example of declaring a socket here by default
+# # AF_INET and SOCK_STREAM gets selected.
+# client_object.connect(('localhost', 9999))
+# # Same as that for a Server.
+# # The packet are generally utf-8 coded hence to decode use decode() method.
+# print(client_object.recv(1024).decode())
+# print(client_object.recv(1024).decode())
+# num = input()
+# client_object.send(bytes(num, 'utf-8'))
+#
+# links = map(str, client_object.recv(100024).decode().split(" "))
+#
+# for link in links:
+#     print(link)
+# client_object.close()
+# # Closing Client

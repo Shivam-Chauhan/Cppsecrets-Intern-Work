@@ -1,0 +1,14 @@
+# import socket
+#
+# client_object = socket.socket()
+# # This is another example of declaring a socket here by default
+# # AF_INET and SOCK_STREAM gets selected.
+# client_object.connect(('localhost', 9999))
+# frequency_of_sending = int(client_object.recv(1024).decode())
+#
+# while frequency_of_sending > 0:
+#     print(client_object.recv(1024).decode())
+#     # Decoded output which is random text
+#     frequency_of_sending -= 1
+# # client_object.close()
+# # Closing Client

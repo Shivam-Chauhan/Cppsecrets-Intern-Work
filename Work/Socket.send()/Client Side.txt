@@ -1,0 +1,27 @@
+# import socket
+#
+# client_object = socket.socket()
+# # This is another example of declaring a socket here by default
+# # AF_INET and SOCK_STREAM gets selected.
+# client_object.connect(('localhost', 8000))
+# print(client_object.recv(1024).decode())
+# print(client_object.recv(1024).decode())
+# yes_no = input()
+# client_object.send(bytes(yes_no, "utf-8"))
+# if 'Y' in yes_no or 'y' in yes_no:
+#     print("Enter phone number")
+#     number = input()
+#     client_object.send(bytes(number, "utf-8"))
+#     print(client_object.recv(1024).decode())
+# elif 'n' in yes_no or 'N' in yes_no:
+#     # Same as that for a Server.
+#     number = input("Enter phone number.")
+#     client_object.send(bytes(number, "utf-8"))
+#     # The packet are generally utf-8 coded hence to decode use decode() method.
+#     name = input("Enter name.")
+#     client_object.send(bytes(name, "utf-8"))
+#     print(client_object.recv(1024).decode())
+# else:
+#     print(client_object.recv(1024).decode())
+# client_object.close()
+# # Closing Client

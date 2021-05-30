@@ -1,0 +1,73 @@
+# import socket
+# import csv
+# import yfinance as yf
+# from matplotlib import pyplot as plt
+# socket_object = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# # Socket Object is created using AF_INET and TCP.
+# socket_object.bind(('localhost', 9999))
+# # Since the socket is server and client is on same machine
+# # we can use 'localhost'.
+# # 9999 is the port number used for binding.
+# socket_object.listen(3)
+# # This listens to only three clients.
+# loc = (r"C:\Users\Shivam Chauhan\Desktop\Book1.csv")
+# tickerid = []
+# companyname = []
+# with open(loc, 'r') as file:
+#     reader = csv.reader(file)
+#     for row in reader:
+#         tickerid.append(row[0])
+#         companyname.append(row[1])
+#
+#
+# while True:
+#     client_object, address_client = socket_object.accept()
+#     client_object.send(bytes("You are connected to Server....", 'utf-8'))
+#     stri = client_object.recv(1024).decode()
+#     ct = 0
+#     counter = 0
+#     for i, j in enumerate(companyname):
+#         temp = list(map(str, j.split(" ")))
+#         combined = ""
+#         for k in temp:
+#             combined += k.lower()
+#         combined.lower()
+#         if stri.lower() in combined:
+#             counter = 1
+#             ct = i
+#     if not counter:
+#         error = "Oops!! Not found..."
+#         client_object.send(bytes("Yes", 'utf-8'))
+#         client_object.send(bytes(error, 'utf-8'))
+#     else:
+#         tickersymbol = tickerid[ct]
+#         print("Showing Graph of :-", companyname[ct])
+#         tickerData = yf.Ticker(tickersymbol)
+#         tickerDf = tickerData.history(period='1d', start='2010-1-1',
+#                                       end='2021-4-23')
+#         open1 = []
+#         close1 = []
+#         vol = []
+#         avgo, avgc = 0, 0
+#         for p in tickerDf.High:
+#             open1.append(p)
+#         for p in tickerDf.Low:
+#             close1.append(p)
+#         for p, j in zip(tickerDf.Open, tickerDf.Close):
+#             avgo += p
+#             avgc += j
+#             vol.append(j-p)
+#         xaxis = range(0, len(open1))
+#         plt.stackplot(xaxis, open1, close1, labels=['Low', 'High'])
+#         plt.legend(loc='upper left')
+#         plt.show()
+#         print()
+#         plt.plot(vol)
+#         plt.title("Volatility")
+#         plt.show()
+#         print()
+#         print("Lowest Price :-", min(tickerDf.Low))
+#         print("Highest Price :-", max(tickerDf.High))
+#         print("Avg Opening :-", avgo/len(tickerDf.Open))
+#         print("Avg Closing :-", avgc/len(tickerDf.Close))
+#         client_object.close()
